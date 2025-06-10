@@ -4,46 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mein Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Mein Servus-Blog</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Über mich</a></li>
-            </ul>
-        </nav>
-    </header>
+    
+    <div id="passwordPrompt" style="display: block; text-align: center; margin-top: 50px;">
+        <h2>Gib das Passwort ein. Wenn du es nicht hast melde dich bei mir</h2>
+        <input type="password" id="passwordInput" placeholder="Passwort" style="padding: 0.5em; font-size: 1em; margin-right: 10px;">
+        <button onclick="checkPassword()">Zugriff</button>
+    </div>
+    <div id="content" style="display: none;">
+    
+        <header>
+            <h1>Mein Reise-Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="about.html">Über mich</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <section id="posts">
-            <article class="blog-post">
-                <h2>Erster Blogbeitrag</h2>
-                <p class="date">10. Juni 2025</p>
-                <p>Servus! Das ist mein erster Beitrag. Hier erzähle ich, wie ich meinen Blog programmiere. Bleib dran!</p>
-            </article>
-            <article class="blog-post">
-                <h2>Zweiter Beitrag</h2>
-                <p class="date">11. Juni 2025</p>
-                <p>Hier kommt bald mehr Inhalt. Du kannst diesen Abschnitt einfach kopieren, um neue Beiträge hinzuzufügen.</p>
-            </article>
-            <article class="blog-post">
-                <h2>aktualisierter Beitrag</h2>
-                <p class="date">11. Juni 2025</p>
-                <p>Hier kommt bald mehr Inhalt. Du kannst diesen Abschnitt einfach kopieren, um neue Beiträge hinzuzufügen.</p>
-            </article>
-        </section>
-    </main>
+        <main>
+            <section id="posts">
+                <article class="blog-post">
+                    <h2>Mein Tag in den Bergen</h2>
+                    <p class="date">10. Juni 2025</p>
+                    <img src="berge.jpg" alt="Bild von den Alpen" style="max-width:100%;">
+                    <p>Servus! Heute war ich in den Alpen wandern. Es war unglaublich!</p>
+                </article>
+                <article class="blog-post">
+                    <h2>Zweiter Beitrag</h2>
+                    <p class="date">11. Juni 2025</p>
+                    <p>Hier kommt bald mehr Inhalt...</p>
+                </article>
+            </section>
+           
+        </main>
 
-    <footer>
-        <p>&copy; 2025 Mein Blog. Servus!</p>
-    </footer>
+        <footer>
+            <p>© 2025 AMK Sucuk</p>
+           
+        </footer>
+    </div>
 
     <script>
-        // Optional: Einfaches JavaScript für Interaktivität
-        console.log("Servus! Blog ist geladen.");
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === 'Bier') { // Ersetze mit deinem eigenen Passwort
+                document.getElementById('passwordPrompt').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Falsches Passwort!');
+            }
+        }
+        
     </script>
 </body>
 </html>
